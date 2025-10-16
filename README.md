@@ -44,7 +44,7 @@ O diagrama abaixo representa a arquitetura do projeto, destacando a aplicação 
 ## 🚀 Funcionalidades <a name="funcionalidades"></a>
 ### Sistema de Cafeteria Implementado
 - **Bebida**: Interface para componentes que podem ser decorados
-- **Espresso**: Componente concreto representando a bebida base
+- **Expresso**: Componente concreto representando a bebida base
 - **BebidaDecorator**: Classe abstrata que mantém referência à bebida
 - **Latte/Chocolate/Chantilly/Caramelo**: Decoradores concretos que adicionam ingredientes
 
@@ -64,19 +64,19 @@ O diagrama abaixo representa a arquitetura do projeto, destacando a aplicação 
 
 ## 📊 Exemplo de Uso <a name="exemplo"></a>
 ```java
-// Criando Espresso simples
-Bebida espresso = new Espresso(5.00f);
-System.out.println(espresso.getDescricao()); // "Espresso"
-System.out.println(espresso.getPreco());      // 5.00
+// Criando expresso simples
+Bebida expresso = new expresso(5.00f);
+System.out.println(expresso.getDescricao()); // "expresso"
+System.out.println(expresso.getPreco());      // 5.00
 
-// Adicionando Latte ao Espresso (+30%)
-Bebida latte = new Latte(new Espresso(5.00f));
-System.out.println(latte.getDescricao());    // "Espresso + Latte"
+// Adicionando Latte ao expresso (+30%)
+Bebida latte = new Latte(new expresso(5.00f));
+System.out.println(latte.getDescricao());    // "expresso + Latte"
 System.out.println(latte.getPreco());         // 6.50
 
-// Criando Mocha: Espresso + Chocolate + Latte
-Bebida mocha = new Latte(new Chocolate(new Espresso(5.00f)));
-System.out.println(mocha.getDescricao());    // "Espresso + Chocolate + Latte"
+// Criando Mocha: expresso + Chocolate + Latte
+Bebida mocha = new Latte(new Chocolate(new expresso(5.00f)));
+System.out.println(mocha.getDescricao());    // "expresso + Chocolate + Latte"
 System.out.println(mocha.getPreco());         // 7.80
 
 // Criando bebida especial com todos os ingredientes
@@ -84,9 +84,9 @@ Bebida especial = new Latte(
                     new Chocolate(
                         new Chantilly(
                             new Caramelo(
-                                new Espresso(5.00f)))));
+                                new expresso(5.00f)))));
 System.out.println(especial.getDescricao());
-// Output: "Espresso + Caramelo + Chantilly + Chocolate + Latte"
+// Output: "expresso + Caramelo + Chantilly + Chocolate + Latte"
 System.out.println(especial.getPreco());
 // Output: 9.87 (calculado dinamicamente)
 
